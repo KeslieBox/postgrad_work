@@ -49,15 +49,27 @@ var numberOfSteps = function(num) {
     }     
 };
 
-// function stepsToZero(num, count){
-//     if (num === 0) return count
-//     if (num % 2 === 0){
-//         num = num / 2
-//         count++
-//         return stepsToZero(num, count)
-//     } else {
-//         num = num - 1
-//         count++
-//         return stepsToZero(num, count)
-//     }   
-// }
+// same problem as above
+var numberOfSteps = function(num) {
+    let count = 0
+    return stepsToZero(num, count)       
+};
+
+function stepsToZero(num, count){
+    if (num === 0) return count
+    if (num % 2 === 0){
+        num = num / 2
+        count++
+        return stepsToZero(num, count)
+    } else {
+        num = num - 1
+        count++
+        return stepsToZero(num, count)
+    }   
+}
+
+var isPowerOfThree = function(n) {
+    if(n === 1) return true  
+    if(n%3 > 0 || n === 0) return false 
+    return isPowerOfThree(n/3)
+}

@@ -26,3 +26,16 @@ function fib(n){
     if (n <= 2) return 1;
     return fib(n-1) + fib(n-2);
 }
+
+var reverseString = function(s) {
+    if (s.length <= 1) return s
+   
+    function swap(left, right){
+        if(right >= left){
+            [s[left], s[right]] = [s[right], s[left]]
+            return swap(left + 1, right - 1)
+        }     
+    }
+    
+    return swap(0, s.length - 1)
+};
